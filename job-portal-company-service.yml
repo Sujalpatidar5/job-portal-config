@@ -1,0 +1,29 @@
+server:
+  port: 5002
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/job_portal_company
+    username: postgres
+    password: admin123
+    driver-class-name: org.postgresql.Driver
+
+eureka:
+  client:
+    fetch-registry: true       # Get other services list
+    register-with-eureka: true # Register this service
+
+    service-url:
+      defaultZone: http://localhost:8761/eureka  # Eureka address
+
+  instance:
+    prefer-ip-address: true    # Use IP instead of hostname
