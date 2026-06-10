@@ -1,0 +1,13 @@
+server:
+  port: 5011
+
+eureka:
+  client:
+    fetch-registry: true       # Get other services list
+    register-with-eureka: true # Register this service
+
+    service-url:
+      defaultZone: http://localhost:8761/eureka  # Eureka address
+
+  instance:
+    prefer-ip-address: true    # Use IP instead of hostname
